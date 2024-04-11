@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+<<<<<<< HEAD
 import Register from './Register';
 import { Link } from 'react-router-dom';
 
@@ -18,13 +19,60 @@ const Login = () => {
     <div>
       <div>
         <form className="form" onSubmit={handleLogin}>
+=======
+import { Link } from 'react-router-dom';
+import '../../styles/login.css';
+
+const Login = () => {
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
+  });
+  const [incorrectPassword, setIncorrectPassword] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Simulating login verification
+    const { email, password } = formData;
+    if (email === 'example@example.com' && password === 'password123') {
+      // Successful login
+      console.log('Login successful');
+      setIncorrectPassword(false);
+    } else {
+      // Incorrect password
+      setIncorrectPassword(true);
+    }
+  };
+
+  return (
+    <div className="con">
+      <div className="cardd">
+        <h2>Login</h2>
+        {incorrectPassword && <p className="error-message">Incorrect password or email. Please try again.</p>}
+        <form onSubmit={handleSubmit}>
+>>>>>>> main
           <div className="form-group">
             <label htmlFor="email">Email:</label>
             <input
               type="email"
               id="email"
+<<<<<<< HEAD
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+=======
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+>>>>>>> main
               required
             />
           </div>
@@ -33,6 +81,7 @@ const Login = () => {
             <input
               type="password"
               id="password"
+<<<<<<< HEAD
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -48,6 +97,24 @@ const Login = () => {
           <button type="submit">Login</button>
           <div>
             <span>New Here?<Link to='Register'>Create an account</Link></span>
+=======
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <button type="submit" className="button1">
+            Log In
+          </button>
+          <div>
+            <span>
+              Don't have an account?{' '}
+              <Link to="/Register" className="register-link">
+                Register
+              </Link>
+            </span>
+>>>>>>> main
           </div>
         </form>
       </div>
@@ -55,4 +122,8 @@ const Login = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Login;
+=======
+export default Login;
+>>>>>>> main
