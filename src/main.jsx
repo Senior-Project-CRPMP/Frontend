@@ -1,8 +1,5 @@
-import React from 'react';
-<<<<<<< HEAD
-=======
+import React from 'react'
 import './App.css'
->>>>>>> main
 import { createRoot } from 'react-dom/client';
 import App from './App';
 

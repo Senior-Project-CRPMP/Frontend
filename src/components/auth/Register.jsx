@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-<<<<<<< HEAD
-import Login from './Login';
-
-
-=======
 import { Link } from 'react-router-dom';
 import '../../styles/Register.css';
->>>>>>> main
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -14,68 +8,17 @@ const Register = () => {
     email: '',
     password: ''
   });
-<<<<<<< HEAD
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-=======
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
->>>>>>> main
       ...prevState,
       [name]: value
     }));
   };
 
-<<<<<<< HEAD
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here, e.g., send data to server
-    console.log(formData);
-  };
-
-  return (
-    <div>
-      <h2>Register</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Full name:</label>
-          <input
-            type="text"
-            name="fullname"
-            value={formData.username}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <button type="submit">Register</button>
-      </form>
-=======
   const validateForm = () => {
     const { fullname, email, password } = formData;
     const errors = {};
@@ -93,7 +36,7 @@ const Register = () => {
     if (!password.trim()) {
       errors.password = 'Password is required';
     } else if (password.length < 6) {
-      errors.password = 'Password mustbe at least 6 characters long';
+      errors.password = 'Password must be at least 6 characters long';
     }
 
     setErrors(errors);
@@ -122,6 +65,7 @@ const Register = () => {
   return (
     <div className="con">
       <div className="cardd">
+      <img src="../src/assets/logo.png" alt="logo" className='im' width = "50px" height = "50px"/>
         <h2>Register</h2>
         {successMessage && <p className="success-message">{successMessage}</p>}
         <form onSubmit={handleSubmit}>
@@ -167,20 +111,15 @@ const Register = () => {
           <div>
             <span>
               Already have an account{' '}
-              <Link to="/Login" className="login-link">
+              <Link to="/login" className="login-link">
                 Login
               </Link>
             </span>
           </div>
         </form>
       </div>
->>>>>>> main
     </div>
   );
 };
 
-<<<<<<< HEAD
 export default Register;
-=======
-export default Register;
->>>>>>> main

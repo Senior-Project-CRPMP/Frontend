@@ -9,7 +9,7 @@ const Header = () => {
  
     <div className="head">
     <ul className="navigation">
-      <li>logo</li>
+      <li> <img src="../src/assets/logo.png" alt="logo" className='image1' width = "50px" height = "50px"/></li>
       <li className='register'><Link to="/register">
               <button className='btn1'>Sign Up</button>
             </Link></li>
