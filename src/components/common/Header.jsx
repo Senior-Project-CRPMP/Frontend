@@ -8,10 +8,16 @@ const Header = () => {
    
  
     <div className="head">
+      <div className='wrap'>
+        <ul className='logo1'>
+      <li class="logo-wrapper">
+  <img src="../src/assets/logo.png" alt="logo" class="image1" width="50px" height="50px"/>
+  <span class="logo-text">CRMP</span>
+     </li>
+     </ul>
+      </div>
     <ul className="navigation">
-      <li> <img src="../src/assets/logo.png" alt="logo" className='image1' width = "50px" height = "50px"/>
-      <span class="logo-text">CRMP</span>
-      </li>
+   
       <li className='register'><Link to="/register">
               <button className='btn1'>Sign Up</button>
             </Link></li>

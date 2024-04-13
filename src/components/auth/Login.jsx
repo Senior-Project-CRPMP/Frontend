@@ -14,10 +14,10 @@ const Login = () => {
   };
 
   return (
-    <div className="con">
-      <div className="cardd">
-      <img src="../src/assets/logo.png" alt="logo" className='i' width = "50px" height = "50px" />
-        <h2>Login</h2>
+    <div className="container">
+      <div className="card">
+        <img src="../src/assets/logo.png" alt="logo" className="logo" width="50px" height="50px" />
+        <h2 className="title">Login</h2>
         {incorrectPassword && <p className="error-message">Incorrect password or email. Please try again.</p>}
         <form onSubmit={handleLogin}>
           <div className="form-group">
@@ -45,9 +45,9 @@ const Login = () => {
               <input type="checkbox" id="rememberMe" name="rememberMe" />
               <label htmlFor="rememberMe">Remember Me</label>
             </div>
-            <Link to="/forgot-password">Forgot password</Link>
+            <Link to="/forgot-password" className="forgot-password-link">Forgot password</Link>
           </div>
-          <button type="submit" className="button1">
+          <button type="submit" className="login-button">
             Log In
           </button>
           <div className="new-account">

@@ -63,13 +63,13 @@ const Register = () => {
   };
 
   return (
-    <div className="con">
-      <div className="cardd">
-      <img src="../src/assets/logo.png" alt="logo" className='im' width = "50px" height = "50px"/>
-        <h2>Register</h2>
-        {successMessage && <p className="success-message">{successMessage}</p>}
+    <div className="register-container">
+      <div className="register-card">
+        <img src="../src/assets/logo.png" alt="logo" className="register-logo" width="50px" height="50px" />
+        <h2 className="register-title">Sign Up</h2>
+        {successMessage && <p className="register-success-message">{successMessage}</p>}
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
+          <div className="register-form-group">
             <label htmlFor="fullname">Full name:</label>
             <input
               type="text"
@@ -79,9 +79,9 @@ const Register = () => {
               onChange={handleChange}
               required
             />
-            {errors.fullname && <p className="error-message">{errors.fullname}</p>}
+            {errors.fullname && <p className="register-error-message">{errors.fullname}</p>}
           </div>
-          <div className="form-group">
+          <div className="register-form-group">
             <label htmlFor="email">Email:</label>
             <input
               type="email"
@@ -91,9 +91,9 @@ const Register = () => {
               onChange={handleChange}
               required
             />
-            {errors.email && <p className="error-message">{errors.email}</p>}
+            {errors.email && <p className="register-error-message">{errors.email}</p>}
           </div>
-          <div className="form-group">
+          <div className="register-form-group">
             <label htmlFor="password">Password:</label>
             <input
               type="password"
@@ -103,15 +103,15 @@ const Register = () => {
               onChange={handleChange}
               required
             />
-            {errors.password && <p className="error-message">{errors.password}</p>}
+            {errors.password && <p className="register-error-message">{errors.password}</p>}
           </div>
-          <button type="submit" className="button1">
+          <button type="submit" className="register-button">
             Sign Up
           </button>
-          <div>
+          <div className="register-existing-account">
             <span>
-              Already have an account{' '}
-              <Link to="/login" className="login-link">
+              Already have an account?{' '}
+              <Link to="/login" className="register-login-link">
                 Login
               </Link>
             </span>
