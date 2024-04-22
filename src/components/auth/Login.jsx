@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import Register from './Register';
 import { Link } from 'react-router-dom';
-
-//import '../../styles/Login.css'; // Import the CSS file
+import '../../styles/login.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [incorrectPassword, setIncorrectPassword] = useState(false);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -15,9 +14,12 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <div>
-        <form className="form" onSubmit={handleLogin}>
+    <div className="container">
+      <div className="card">
+        <img src="../src/assets/logo.png" alt="logo" className="logo" width="50px" height="50px" />
+        <h2 className="title">Login</h2>
+        {incorrectPassword && <p className="error-message">Incorrect password or email. Please try again.</p>}
+        <form onSubmit={handleLogin}>
           <div className="form-group">
             <label htmlFor="email">Email:</label>
             <input
@@ -38,16 +40,23 @@ const Login = () => {
               required
             />
           </div>
-          <div>
-            <div>
-              <input type= "checkbox" name = " " id = " " />
-              <label htmlFor='Remeber Me'>Remember Me</label>
+          <div className="form-options">
+            <div className="remember-me">
+              <input type="checkbox" id="rememberMe" name="rememberMe" />
+              <label htmlFor="rememberMe">Remember Me</label>
             </div>
-            <span>Forgot password</span>
+            <Link to="/forgot-password" className="forgot-password-link">Forgot password</Link>
           </div>
-          <button type="submit">Login</button>
-          <div>
-            <span>New Here?<Link to='Register'>Create an account</Link></span>
+          <button type="submit" className="login-button">
+            Log In
+          </button>
+          <div className="new-account">
+            <span>
+              Don't have an account?{' '}
+              <Link to="/register" className="register-link">
+                Register
+              </Link>
+            </span>
           </div>
         </form>
       </div>
