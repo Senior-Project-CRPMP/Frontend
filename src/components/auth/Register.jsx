@@ -75,6 +75,7 @@ const Register = () => {
               type="text"
               id="fullname"
               name="fullname"
+              className='fullname'
               value={formData.fullname}
               onChange={handleChange}
               required
