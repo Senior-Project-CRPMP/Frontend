@@ -2,12 +2,11 @@ import React from 'react'
 import Header from '../common/Header'
 import Footer from '../common/Footer'
 import '../../styles/header.css'
+import Layout from '../common/Layout';
 export default function Home() {
   return (
     <>
-      <div className='header'>
-        <Header />
-      </div>
+     <Layout>
       <div className='content'>
         <img src="../src/assets/research.png" alt="research image" className='image' />
         <div className="card1">
@@ -15,9 +14,7 @@ export default function Home() {
           <p>Card content goes here.</p>
           </div>
       </div>
-      <div className='footer'>
-        <Footer />
-      </div>
+      </Layout>
     </>
   );
 }

@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('../Fonts/Poppins/Poppins-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 .container {
   display: flex;
   justify-content: center;
@@ -43,6 +49,7 @@ input[type='password'] {
   border-bottom: 1px solid black;
   outline: none;
   color: blue;
+  font-family: Poppins;
 
 }
 

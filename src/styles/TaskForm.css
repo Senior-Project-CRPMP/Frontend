@@ -7,7 +7,7 @@
 .task-form {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
+  width: 300px;
   margin-bottom: 20px;
 }
 
@@ -17,31 +17,41 @@
 
 .task-form input,
 .task-form select {
-  padding: 5px;
   margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .task-form button {
-  padding: 10px 20px;
-  background-color: #4CAF50;
+  padding: 8px 12px;
+  background-color: #4caf50;
   color: #fff;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
-  font-size: 16px;
 }
 
 .task-form button:hover {
   background-color: #45a049;
 }
 
-.task-form h2 {
+.assigned-task-card {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
   margin-bottom: 10px;
 }
 
-.task-form ul {
-  list-style-type: none;
+.assigned-task-card h3 {
+  margin-top: 0;
 }
 
-.task-form li {
-  margin-bottom: 10px;
+.assigned-task-card p {
+  margin: 5px 0;
+}
+
+.assigned-task-card strong {
+  font-weight: bold;
 }
