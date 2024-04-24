@@ -18,11 +18,12 @@ return (
       
       <Router>
         <Routes>
-           <Route exact path="/" element={<TaskForm/>} />
+           <Route exact path="/" element={<Home/>} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/register" element={<Register />} />
             <Route exact path="/register/Login" element={<Login />} />
             <Route exact path="/register/Login/register" element={<Register/>} />
+            <Route exact path="/task" element={<TaskForm />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
         </Router>
